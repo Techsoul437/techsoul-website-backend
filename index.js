@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 8000;
-const MONGOURL = process.env.MONGO_URL || 'mongodb://localhost:27017/TechsoulSolutions';
+const MONGOURL = process.env.MONGO_URL;
 
 app.use(bodyParser.json());
 app.use(cors());

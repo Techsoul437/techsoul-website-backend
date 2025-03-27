@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
+import adminRoute from "./routes/adminRoute.js";
 
 const app = express();
 
@@ -19,6 +20,7 @@ const MONGOURL = process.env.MONGO_URL || 'mongodb://localhost:27017/TechsoulSol
 app.get('/', (req, res) => {
     res.send("TechSoul's backend is up and running!");
 });
+app.use("/admin", adminRoute)
 
 mongoose
     .connect(MONGOURL)

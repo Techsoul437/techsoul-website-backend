@@ -7,8 +7,6 @@ export const signIn = async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const admin = await Admin.find();
-        console.log('admin', admin)
         const adminExist = await Admin.findOne({ email });
         if (!adminExist) {
             return res.status(400).json({
